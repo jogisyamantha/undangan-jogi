@@ -18,25 +18,24 @@
     </audio>
     <button id="musicBtn">🔊</button>
 
-    <!-- Halaman Cover -->
-     <!-- <div id="coverOverlay" class="cover-overlay">
-      <div class="cover-content">
-        <h1>Dhiya & Rosi</h1>
-        <p>Yth. Bapak/Ibu/Saudara/i</p>
-        <button id="openInvitation">Buka Undangan</button>
-      </div>
-    </div> -->
     <div id="coverPage" class="container section-1">
-        <p class="fade-up">THE WEDDING OF</p>
+      <div class="section-1-0">
+        <h2 class="fade-up">THE WEDDING OF</h2>
         <h1 class="fade-up nama-kiri">Novera</h1>
         <h1 class="fade-up nama-tengah">&</h1>
         <h1 class="fade-up nama-kanan">Jogi</h1>
-        <p class="fade-up">AUGUST, 16 2026</p>
+        <h2 class="fade-up">AUGUST, 16 2026</h2>
+      </div>
+      <div class="section-1-1">
         <p class="fade-up">DEAR,</p>
         <p class="fade-up" id="guestName">Tamu Undangan</p>
+        <!-- Tambahkan tombol ini -->
+        <img src="asset/button3.png" id="btnBuka" class="fade-up button-buka" style="cursor: pointer;" alt="Buka Undangan">
+      </div>
     </div>
 
     <!-- Isi Undangan -->
+  <div id="mainContent" style="display: none;">
     <div id="sectionsWrapper">
       <div class="container section-2">
         <div class="section-2-0">
@@ -156,6 +155,7 @@ you may do so through the link below:</p>
       </div>
     </div>
   </div>
+  </div>
 <div id="imgOverlay" class="hidden overlay">
   <img id="zoomedImg" src="" alt="Zoomed Image" />
 </div>
@@ -194,6 +194,29 @@ Jogi Syamantha 081270206123</p>
 </div>
 
   <script>
+
+    // Tambahkan di bagian paling atas script atau sesudah deklarasi variabel musik
+    const btnBuka = document.getElementById("btnBuka");
+    const coverPage = document.getElementById("coverPage");
+    const mainContent = document.getElementById("mainContent");
+
+    btnBuka.addEventListener("click", () => {
+        // 1. Sembunyikan cover
+        coverPage.style.display = "none";
+        
+        // 2. Tampilkan konten utama
+        mainContent.style.display = "block";
+        
+        // 3. Play musik
+        const bgMusic = document.getElementById("bgMusic");
+        bgMusic.play().catch(() => {});
+        isPlaying = true;
+        document.getElementById("musicBtn").textContent = "🔊";
+        
+        // 4. Paksa scroll ke atas
+        window.scrollTo(0, 0);
+    });
+
     function startCountdown() {
       const weddingDate = new Date("August 16, 2026 09:00:00").getTime();
 
