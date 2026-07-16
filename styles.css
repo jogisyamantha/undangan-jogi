@@ -169,10 +169,6 @@ html, body {
     margin-top: 30px;
 }
 
-.section-2-1 p {
-  /* margin-bottom: 20px; */
-}
-
 /* HALAMAN 2 */
 
 .section-2-2 {
@@ -245,7 +241,6 @@ html, body {
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
-  height: 400px; /* Tentukan tinggi container */
   display: flex; /* Supaya isi bisa diatur posisinya */
   align-items: center; /* Tengah vertikal */
   justify-content: space-between; /* Tengah horizontal */
@@ -254,15 +249,13 @@ html, body {
 .title-top {
   font-family: "font5";
   font-size: 20px;
-  margin-top: -20px;
-  margin-bottom: 40px;
-    color: #ece4cb;
+  color: #ece4cb;
 }
 
 .paper {
   position: absolute;
   z-index: 1;
-  width: 380px;
+  width: 330px;
   pointer-events: none;
   margin-top: -50px;
 }
@@ -270,7 +263,7 @@ html, body {
 .flower {
   position: absolute;
   z-index: 10;
-  width: 220px; /* Ukuran bunga, bisa Anda sesuaikan */
+  width: 150px; /* Ukuran bunga, bisa Anda sesuaikan */
   pointer-events: none;
 }
 
@@ -279,16 +272,17 @@ html, body {
   right: -30px;
   rotate: 180deg;
   margin-top: -500px;
-  margin-right: -60px;
+  margin-right: -20px;
 }
 
 .flower-bottom-left {
   left: -40px;
   margin-top: 500px;
-  margin-left: -60px;
+  margin-left: -10px;
 }
 
 .section-3-1 {
+  margin-top: 30px;
   z-index: 2;
   padding: 80px;
   color: #656952;
@@ -297,7 +291,7 @@ html, body {
 .section-3-1 h1 {
   font-family: "font5";
   font-weight: 100;
-  font-size: 15px;
+  font-size: 10px;
   margin-top: 20px;
 }
 
@@ -311,7 +305,7 @@ html, body {
 .section-3-1 h2 {
   font-family: "font1";
   font-weight: normal;
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -333,8 +327,8 @@ html, body {
   font-family: "font1";
   font-size: 15px;
   margin-top: 20px;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 60px;
+  margin-right: 60px;
   color: #ece4cb;
 }
 
@@ -360,10 +354,8 @@ html, body {
 
 .section-4 h1 {
   font-family: "font5";
-  letter-spacing: 2px;
   font-size: 25px;
-  margin-top: -100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   color: #2E4517;
 }
 
@@ -426,12 +418,12 @@ display: grid;
 .section-5-1 {
   z-index: 2;
   color: #ece4cb;
-  margin-top: -130%;
+  margin-top: -100%;
 }
 
 .section-5-0 img {
   z-index: 3;
-  width: 70%;
+  width: 60%;
   padding-left: 60px;
   padding-right: 60px;
 }
@@ -440,13 +432,13 @@ display: grid;
   right: -30px;
   rotate: 180deg;
   margin-right: -60px;
-  margin-top: -300px;
+  margin-top: -200px;
 }
 
 .flower-bottom-left1 {
   left: -40px;
   margin-left: -60px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .section-5-2 h1 {
@@ -460,12 +452,12 @@ display: grid;
 }
 
 .nama-1 {
-  margin-top: 220px;
-  margin-left: -200px;
+  margin-top: 35%;
+  margin-left: -50%;
 }
 
 .nama-2 {
-  margin-top: 340px;
+  margin-top: 62%;
 }
 
 /* HALAMAN 6 */
