@@ -291,8 +291,13 @@ html, body {
 .flower {
   position: absolute;
   z-index: 10;
-  width: 150px; /* Ukuran bunga, bisa Anda sesuaikan */
+  width: 120px; /* Ukuran bunga, bisa Anda sesuaikan */
   pointer-events: none;
+  /* Tambahkan baris ini ke dalam class .flower yang sudah ada */
+  animation: swing 4s ease-in-out infinite;
+  
+  /* Pastikan transform-origin diatur agar rotasi tidak aneh */
+  transform-origin: top center;
 }
 
 
@@ -515,7 +520,7 @@ html, body {
   z-index: 1;
   width: 100%;
   pointer-events: none;
-  margin-bottom: -95%;
+  margin-bottom: -100%;
 }
 
 .section-5-1 {
@@ -535,7 +540,7 @@ html, body {
   right: -30px;
   rotate: 180deg;
   margin-right: -60px;
-  margin-top: -200px;
+  margin-top: -50px;
 }
 
 .flower-bottom-left1 {
@@ -913,6 +918,11 @@ html, body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes swing {
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
 
 /* BUTTON */
 
