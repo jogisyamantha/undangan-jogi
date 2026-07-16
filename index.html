@@ -93,10 +93,12 @@
       <div class="container section-4">
         <h1 class="fade-up delay-1">Gallery of Us</h1>
         <div class="section-4-foto">
-          <img class="landscape fade-up" src="asset/foto/foto1.png" alt="">
-          <img class="landscape fade-up" src="asset/foto/foto2.png" alt="">
-          <img class="potrait fade-up" src="asset/foto/foto3.png" alt="">
-          <img class="potrait fade-up" src="asset/foto/foto4.png" alt="">
+          <img class="img-1 fade-up" src="asset/foto/foto1.png" alt="">
+          <img class="img-2 fade-up" src="asset/foto/foto2.png" alt="">
+          <img class="img-3 fade-up" src="asset/foto/foto3.png" alt="">
+          <img class="img-4 fade-up" src="asset/foto/foto4.png" alt="">
+          <img class="img-5 fade-up" src="asset/foto/foto5.png" alt="">
+          <img class="img-6 fade-up" src="asset/foto/foto6.png" alt="">
         </div>
       </div>
       <div class="container section-5">
@@ -116,6 +118,19 @@ you may do so through the link below:</p>
           <h1 class="nama-2">Jogi</h1>
         </div>
         <img class="fade-up section-5-img" src="asset/gif2.png" alt="">
+      </div>
+      <div class="container section-rsvp">
+        <h1 class="fade-up">RSVP & Pesan</h1>
+        
+        <div class="rsvp-input-area fade-up">
+          <input type="text" id="guestNameInput" placeholder="Nama Anda" required>
+          <textarea id="guestMessageInput" placeholder="Tulis pesan (maks 20 kata)..." rows="3"></textarea>
+          <button onclick="addRSVP()" class="button-rsvp">Kirim Pesan</button>
+        </div>
+
+        <div id="rsvpList" class="rsvp-list fade-up">
+          <!-- Pesan dimuat otomatis melalui JS -->
+        </div>
       </div>
     </div>
   </div>
@@ -346,7 +361,65 @@ document.addEventListener("DOMContentLoaded", function () {
 //     musicBtn.textContent = "🔊";
 //   }
 // });
+// Konfigurasi API
+const API_URL = 'https://api.sheetbest.com/sheets/2eb63783-b089-4c88-91d4-8779a1471c50';
 
+// Fungsi memuat pesan dari Google Sheets
+async function loadMessages() {
+  const rsvpList = document.getElementById("rsvpList");
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    
+    rsvpList.innerHTML = ""; // Bersihkan list
+    // Menampilkan pesan terbaru (dari bawah ke atas)
+    data.reverse().forEach(item => {
+      const div = document.createElement("div");
+      div.className = "rsvp-item";
+      div.innerHTML = `<strong>${item.Nama}</strong><p>${item.Pesan}</p>`;
+      rsvpList.appendChild(div);
+    });
+  } catch (error) {
+    console.error("Gagal memuat pesan:", error);
+  }
+}
+
+// Fungsi mengirim pesan ke Google Sheets
+  async function addRSVP() {
+    const nama = document.getElementById("guestNameInput").value.trim();
+    const pesan = document.getElementById("guestMessageInput").value.trim();
+
+    // Validasi jumlah kata (maks 20)
+    const wordCount = pesan.split(/\s+/).filter(word => word.length > 0).length;
+
+    if (nama === "" || pesan === "") {
+      alert("Mohon isi nama dan pesan!");
+      return;
+    }
+    if (wordCount > 20) {
+      alert("Pesan maksimal 20 kata!");
+      return;
+    }
+
+    // Kirim ke Google Sheets
+    await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+          Nama: nama, 
+          Pesan: pesan, 
+          Tanggal: new Date().toLocaleString() 
+      })
+    });
+
+    // Reset & Refresh
+    document.getElementById("guestNameInput").value = "";
+    document.getElementById("guestMessageInput").value = "";
+    loadMessages();
+  }
+
+  // Jalankan saat halaman dibuka
+  document.addEventListener("DOMContentLoaded", loadMessages);
   </script>
 </body>
 </html>
