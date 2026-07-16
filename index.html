@@ -32,7 +32,7 @@
         <h1 class="fade-up nama-tengah">&</h1>
         <h1 class="fade-up nama-kanan">Jogi</h1>
         <p class="fade-up">AUGUST, 16 2026</p>
-        <p class="fade-up">Dear</p>
+        <p class="fade-up">DEAR</p>
         <p class="fade-up" id="guestName">Tamu Undangan</p>
     </div>
 
@@ -63,13 +63,13 @@
         </div>
       </div>
       <div class="container section-3">
-        <img src="asset/pp1.png" class="paper" alt="Paper Tengah">
-        <img src="asset/fl1.png" class="flower flower-top-right" alt="Bunga Orkid Atas">
-        <img src="asset/fl1.png" class="flower flower-bottom-left" alt="Bunga Orkid Bawah">
+        <img src="asset/pp1.png" class="fade-up paper" alt="Paper Tengah">
+        <img src="asset/fl1.png" class="fade-up flower flower-top-right" alt="Bunga Orkid Atas">
+        <img src="asset/fl1.png" class="fade-up flower flower-bottom-left" alt="Bunga Orkid Bawah">
         <h2 class="title-top">Date & Location</h2>
 
         <div class="section-3-1">
-          <h2 class="fade-up">MINGGU</h2>
+          <h2 class="fade-up">SUNDAY</h2>
           <h2 class="fade-up">16 AGUSTUS 2026</h2>
 
           <h1 class="fade-up">Akad</h1>
@@ -80,14 +80,35 @@
 
           <h1 class="fade-up">Location</h1>
           <h2 class="fade-up">Gedung Asrama Haji Kota Baru, Jambi</h2>
-          <a href="https://maps.app.goo.gl/5krZKaFV5NdNGjMy5?g_st=ipc" target="_blank">
-            <p>Jl. H. Agus Salim, Handil Jaya, Kec. Kota Baru, Kota Jambi</p>
+          <a href="https://maps.app.goo.gl/K1Va2TkjoUu89Dph7?g_st=ic" target="_blank">
+            <img src="asset/button2.png" class="fade-up maps" alt="Maps">
           </a>
         </div>
         <div class="section-3-2">
           <p>It would be a joy for us</p>
           <p>if you could attend our wedding day.</p>
           <p>Please keep us in your duas.</p>
+        </div>
+      </div>
+      <div class="container section-countdown">
+        <h2 class="fade-up">MENGHITUNG HARI MENUJU HARI BAHAGIA</h2>
+        <div class="countdown-wrapper fade-up">
+          <div class="box">
+            <span id="days">00</span>
+            <p>HARI</p>
+          </div>
+          <div class="box">
+            <span id="hours">00</span>
+            <p>JAM</p>
+          </div>
+          <div class="box">
+            <span id="minutes">00</span>
+            <p>MENIT</p>
+          </div>
+          <div class="box">
+            <span id="seconds">00</span>
+            <p>DETIK</p>
+          </div>
         </div>
       </div>
       <div class="container section-4">
@@ -103,8 +124,8 @@
       </div>
       <div class="container section-5">
         <div class="section-5-0">
-          <img src="asset/fl1.png" class="flower flower-top-right1" alt="Bunga Orkid Atas">
-          <img src="asset/fl1.png" class="flower flower-bottom-left1" alt="Bunga Orkid Bawah">
+          <img src="asset/fl1.png" class="fade-up flower flower-top-right1" alt="Bunga Orkid Atas">
+          <img src="asset/fl1.png" class="fade-up flower flower-bottom-left1" alt="Bunga Orkid Bawah">
         </div>
         <div class="section-5-1">
           <h1>Wedding Gift</h1>
@@ -114,8 +135,8 @@ you may do so through the link below:</p>
           <img class="fade-up gift-button" src="asset/gift.png" alt="">
         </div>
         <div class="section-5-2">
-          <h1 class="nama-1">Novera</h1>
-          <h1 class="nama-2">Jogi</h1>
+          <h1 class="nama-1 fade-up">Novera</h1>
+          <h1 class="nama-2 fade-up">Jogi</h1>
         </div>
         <img class="fade-up section-5-img" src="asset/gif2.png" alt="">
       </div>
@@ -172,6 +193,28 @@ Jogi Syamantha 081270206123</p>
 </div>
 
   <script>
+    function startCountdown() {
+      const weddingDate = new Date("August 16, 2026 09:00:00").getTime();
+
+      setInterval(function() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+      }, 1000);
+    }
+
+    // Jalankan fungsi saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", startCountdown);
+
     function getParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(param);
