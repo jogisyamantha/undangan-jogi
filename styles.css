@@ -173,7 +173,7 @@ html, body {
 }
 
 .section-2 {
-  background-image: url('asset/bg1.png'); /* Path gambar */
+  background-image: url('asset/bg1.jpg'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
@@ -366,7 +366,7 @@ html, body {
 }
 
 .section-3-2 p {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .webp-crop {
@@ -384,7 +384,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('asset/bg1.png'); /* Path gambar */
+  background-image: url('asset/bg1.jpg'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
@@ -486,7 +486,7 @@ html, body {
 /* HALAMAN 5 */
 
 .section-5 {
-  background-image: url('asset/bg1.png'); /* Path gambar */
+  background-image: url('asset/bg1.jpg'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
@@ -560,12 +560,12 @@ html, body {
 }
 
 .nama-1 {
-  margin-top: 25%;
+  margin-top: 30%;
   margin-left: -50%;
 }
 
 .nama-2 {
-  margin-top: 72%;
+  margin-top: 77%;
 }
 
 /* HALAMAN 6 */
@@ -642,7 +642,7 @@ html, body {
 }
 
 .section-rsvp {
-  background-image: url('asset/bg1.png'); /* Path gambar */
+  background-image: url('asset/bg1.jpg'); /* Path gambar */
   background-size: cover; /* Membuat gambar menyesuaikan ukuran container */
   background-position: center; /* Memusatkan gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang */
@@ -795,7 +795,7 @@ html, body {
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease;
+  transition: all 1.0s ease;
 }
 
 .fade-up.show {
